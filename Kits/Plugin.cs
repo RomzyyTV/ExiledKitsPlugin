@@ -1,7 +1,6 @@
 ﻿using System;
 using Exiled.API.Features;
 using ExiledKitsPlugin.Classes;
-using ExiledKitsPlugin.Handlers;
 
 namespace ExiledKitsPlugin
 {
@@ -13,7 +12,7 @@ namespace ExiledKitsPlugin
         public static Plugin Instance { get; set; }
         public KitEntryManager KitEntryManager;
         public KitManager KitManager;
-        private Handlers.Handlers _handlers;
+        private Handlers _handlers;
         
         public override void OnEnabled()
         {
@@ -42,7 +41,7 @@ namespace ExiledKitsPlugin
 
         void RegisterEvents()
         {
-            _handlers = new Handlers.Handlers();
+            _handlers = new Handlers();
             //Exiled.Events.Handlers.Server.RoundEnded += _handlers.OnRoundEnded;
             Exiled.Events.Handlers.Server.RestartingRound += _handlers.OnRoundRestart;
             Exiled.Events.Handlers.Player.Left += _handlers.OnPlayerLeave;
